@@ -58,6 +58,7 @@ class _CreateState extends State<Create> {
               actionsAlignment: MainAxisAlignment.center,
             );
           });
+      return;
     }
     if (_sloganController.text.trim().isEmpty) {
       showDialog(

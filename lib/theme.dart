@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AppColors {
   static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
@@ -13,43 +12,48 @@ class AppColors {
 }
 
 ThemeData primaryTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: AppColors.primaryColor,
-  ),
-  scaffoldBackgroundColor: AppColors.secondaryAccent,
-  appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.secondaryColor,
-      foregroundColor: AppColors.textColor,
-      surfaceTintColor: Colors.transparent,
-      centerTitle: true),
-  textTheme: TextTheme(
-      bodyMedium: TextStyle(
-          color: AppColors.textColor, fontSize: 16.0, letterSpacing: 1),
-      headlineMedium: TextStyle(
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primaryColor,
+    ),
+    scaffoldBackgroundColor: AppColors.secondaryAccent,
+    appBarTheme: AppBarTheme(
+        backgroundColor: AppColors.secondaryColor,
+        foregroundColor: AppColors.textColor,
+        surfaceTintColor: Colors.transparent,
+        centerTitle: true),
+    textTheme: TextTheme(
+        bodyMedium: TextStyle(
+            color: AppColors.textColor, fontSize: 16.0, letterSpacing: 1),
+        headlineMedium: TextStyle(
+            color: AppColors.titleColor,
+            fontSize: 16.0,
+            letterSpacing: 1,
+            fontWeight: FontWeight.bold),
+        titleMedium: TextStyle(
           color: AppColors.titleColor,
-          fontSize: 16.0,
-          letterSpacing: 1,
-          fontWeight: FontWeight.bold),
-      titleMedium: TextStyle(
-        color: AppColors.titleColor,
-        fontSize: 18.0,
-        letterSpacing: 2,
-        fontWeight: FontWeight.bold,
-      )),
+          fontSize: 18.0,
+          letterSpacing: 2,
+          fontWeight: FontWeight.bold,
+        )),
 
-  //card theme
-  cardTheme: CardTheme(
-      color: AppColors.secondaryColor.withOpacity(0.5),
-      surfaceTintColor: Colors.transparent,
-      shape: const RoundedRectangleBorder(),
-      shadowColor: Colors.transparent,
-      margin: const EdgeInsets.only(bottom: 16)),
+    //card theme
+    cardTheme: CardTheme(
+        color: AppColors.secondaryColor.withOpacity(0.5),
+        surfaceTintColor: Colors.transparent,
+        shape: const RoundedRectangleBorder(),
+        shadowColor: Colors.transparent,
+        margin: const EdgeInsets.only(bottom: 16)),
 
 //input decoration theme
-  inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: AppColors.secondaryColor.withOpacity(0.5),
-      border: InputBorder.none,
-      labelStyle: TextStyle(color: AppColors.textColor),
-      prefixIconColor: AppColors.textColor),
-);
+    inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: AppColors.secondaryColor.withOpacity(0.5),
+        border: InputBorder.none,
+        labelStyle: TextStyle(color: AppColors.textColor),
+        prefixIconColor: AppColors.textColor),
+
+//dialog theme
+    dialogTheme: DialogTheme(
+      backgroundColor: AppColors.secondaryAccent,
+      surfaceTintColor: Colors.transparent,
+    ));
