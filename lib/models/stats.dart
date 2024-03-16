@@ -25,44 +25,47 @@ mixin Stats {
   void increaseStat(String stat) {
     if (_points > 0) {
       switch (stat) {
-        case 'health':
+        case 'Health':
           _health++;
+          _points--;
           break;
-        case 'attack':
+        case 'Attack':
           _attack++;
+          _points--;
           break;
-        case 'defense':
+        case 'Defense':
           _defense++;
+          _points--;
           break;
-        case 'skill':
+        case 'Skill':
           _skill++;
+          _points--;
           break;
       }
-      _points--;
     }
   }
 
   void decreaseStat(String stat) {
     switch (stat) {
-      case 'health':
+      case 'Health':
         if (_health > 5) {
           _health--;
           _points++;
         }
         break;
-      case 'attack':
+      case 'Attack':
         if (_attack > 5) {
           _attack--;
           _points++;
         }
         break;
-      case 'defense':
+      case 'Defense':
         if (_defense > 5) {
           _defense--;
           _points++;
         }
         break;
-      case 'skill':
+      case 'Skill':
         if (_skill > 5) {
           _skill--;
           _points++;
