@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rpg/models/character.dart';
 import 'package:flutter_rpg/screens/create/create.dart';
 import 'package:flutter_rpg/screens/home/character_card.dart';
 import 'package:flutter_rpg/services/character_store.dart';
@@ -39,7 +38,13 @@ class _HomeState extends State<Home> {
                   return ListView.builder(
                     itemCount: value.characters.length,
                     itemBuilder: (_, index) {
-                      return CharacterCard(value.characters[index]);
+                      return Dismissible(
+                          key: ValueKey(value.characters[index].id),
+                          onDismissed: (direction) {
+                            Provider.of<CharacterStore>(context, listen: false)
+                                .removeCharacter(value.characters[index]);
+                          },
+                          child: CharacterCard(value.characters[index]));
                     },
                   );
                 }),
